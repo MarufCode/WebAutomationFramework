@@ -11,18 +11,18 @@ public class DriverManager {
     public static WebDriver driver;
 
     public static WebDriver getDriver(){
-      return driver;
+        return driver;
       }
 
-   @BeforeMethod
-    static void init(){
+
+    public static void init(){
        if (driver == null){
            driver = new EdgeDriver();
        }
    }
 
-   @AfterMethod
-    static void Down(){
+
+    public static void down(){
        if(driver != null){
            driver.quit();
            driver = null;

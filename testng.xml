@@ -4,10 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="WebAutomationFramework">
         <classes>
-            <class name="com.maruf.tests.TestVWOLogin">
-                <methods>
-                    <include name="testLoginPositive"/>
-                </methods>
+            <class name="com.maruf.tests.TestVWOLoginPOMBaseTest">
             </class>
         </classes>
     </test>

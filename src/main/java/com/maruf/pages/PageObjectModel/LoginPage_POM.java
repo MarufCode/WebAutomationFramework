@@ -1,15 +1,15 @@
 package com.maruf.pages.PageObjectModel;
 
+import com.maruf.base.CommonToAllPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-public class LoginPage_POM {
-    WebDriver driver;
+public class LoginPage_POM extends CommonToAllPage {
+
 
     public LoginPage_POM() {
-        driver = new EdgeDriver();
-        driver.get("https://app.vwo.com");
+       super();
     }
 
 
@@ -25,20 +25,19 @@ public class LoginPage_POM {
 
 
 
-
     // PAGE ACTIONS
 
-    public String loginToInvalidCreds() throws InterruptedException {
+    public String loginToInvalidCreds(){
 
-        driver.findElement(username).sendKeys("admin");
-        driver.findElement(password).sendKeys("admin");
-        driver.findElement(signIn).click();
+        enterInput(username, "admin");
+        enterInput(password, "admin");
+        clickElement(signIn);
         try {
             Thread.sleep(5000);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return driver.findElement(error_msg).getText();
+        return getElement(error_msg).getText();
 
 
     }

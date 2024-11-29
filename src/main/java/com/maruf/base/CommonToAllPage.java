@@ -8,50 +8,37 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static java.sql.DriverManager.getDriver;
+import static com.maruf.driver.DriverManager.getDriver;
 
 public class CommonToAllPage {
 
-
     public CommonToAllPage() {
-
-        // If you want to call something before every Page Object Class call, Put your Code here");
-        // Open File, Open Data Base Connection You can write code here
+        // Constructor logic can go here
     }
 
-
-
-    public void clickElement(By by){
-        DriverManager.driver.findElement(by).click();
+    public void openVWOLoginURL() {
+        getDriver().get("https://app.vwo.com");
     }
 
+    public void clickElement(By by) {
+        getDriver().findElement(by).click();
+    }
 
     public void enterInput(By by, String key) {
-        DriverManager.driver.findElement(by).sendKeys(key);
+        getDriver().findElement(by).sendKeys(key);
     }
 
-
-    // Wait Explicits Here
-
     public WebElement presenceOfElement(By elementLocation) {
-        return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.presenceOfElementLocated(elementLocation));
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(20))
+                .until(ExpectedConditions.presenceOfElementLocated(elementLocation));
     }
 
     public WebElement visibilityOfElement(By elementLocation) {
-        return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(20)).until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
+        return new WebDriverWait(getDriver(), Duration.ofSeconds(20))
+                .until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
     }
 
     public WebElement getElement(By key) {
-        return DriverManager.getDriver().findElement(key);
+        return getDriver().findElement(key);
     }
-
-
-
-
-
-
-
-
-
-
 }
