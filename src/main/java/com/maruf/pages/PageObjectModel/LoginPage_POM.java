@@ -1,6 +1,7 @@
 package com.maruf.pages.PageObjectModel;
 
 import com.maruf.base.CommonToAllPage;
+import com.maruf.utils.PropertyReader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -27,20 +28,35 @@ public class LoginPage_POM extends CommonToAllPage {
 
     // PAGE ACTIONS
 
-    public String loginToInvalidCreds(){
+    public String loginToVWOInvalidCreds(){
 
-        enterInput(username, "admin");
-        enterInput(password, "admin");
+        enterInput(username, PropertyReader.readKey("username"));
+        enterInput(password,"admin");
         clickElement(signIn);
-        try {
-            Thread.sleep(5000);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        presenceOfElement(error_msg);
+        visibilityOfElement(error_msg);
         return getElement(error_msg).getText();
 
 
+
     }
+
+     public void loginToVWOvalidCreds(){
+
+        enterInput(username, PropertyReader.readKey("username"));
+        enterInput(password, PropertyReader.readKey("password"));
+        clickElement(signIn);
+
+
+
+    }
+
+
+
+    public DashboardPage_POM afterLoginVWOValidCreds(){
+        return new DashboardPage_POM();
+    }
+
 
 
 
