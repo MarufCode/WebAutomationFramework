@@ -10,7 +10,6 @@ public class PropertyReader {
 
     }
 
-
     public static String readKey(String key) {
 
         FileInputStream fileInputStream = null;
@@ -20,7 +19,7 @@ public class PropertyReader {
             p = new Properties();
             p.load(fileInputStream);
 
-        }catch(Exception e){
+        }catch (Exception e){
             e.printStackTrace();
         }finally {
             try {

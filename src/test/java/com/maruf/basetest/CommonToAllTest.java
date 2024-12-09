@@ -32,6 +32,9 @@ public class CommonToAllTest {
 
 
 
+    public void testPrint(){
+        System.out.println("HI I am from base");
+    }
 
 
 

@@ -47,8 +47,6 @@ public class LoginPage_POM extends CommonToAllPage {
         enterInput(password, PropertyReader.readKey("password"));
         clickElement(signIn);
 
-
-
     }
 
 

@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static com.maruf.driver.DriverManager.getDriver;
+//import static com.maruf.driver.DriverManagerTL.getDriver;
 
 public class CommonToAllPage {
 
@@ -23,6 +24,15 @@ public class CommonToAllPage {
 
     public void clickElement(By by) {
         getDriver().findElement(by).click();
+    }
+
+    public void clickElement(WebElement element) {
+        element.click();
+    }
+
+
+    public void enterInput(WebElement element, String key) {
+        element.sendKeys(key);
     }
 
     public void enterInput(By by, String key) {

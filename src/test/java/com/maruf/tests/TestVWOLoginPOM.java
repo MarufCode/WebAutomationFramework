@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class TestVWOLoginPOM {
 
 
-    private static final Logger log = LoggerFactory.getLogger(TestVWOLoginPOM.class);
+//    private static final Logger log = LoggerFactory.getLogger(TestVWOLoginPOM.class);
 
     @Test
     public void testLoginNegative() throws InterruptedException {
